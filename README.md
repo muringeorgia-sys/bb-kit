@@ -29,6 +29,7 @@
 | О себе | Паспорт пользователя: кто вы, цели, ограничения, как отвечать. Добавляется в инструкции каждого треда. Пока шаблон не заполнен — ничего не добавляет |
 | Агенты | Список субагентов Claude: включить, выключить, редактировать, создать, запустить |
 | Open In App | Windows: ссылки на pptx, pdf, docx, xlsx открываются в приложении по умолчанию |
+| Ответы TG | Упоминания в Telegram: 3 варианта ответа в вашем тоне, отправка по кнопке, обучение на ваших ответах. Нужны telegram-mcp, ключи Telegram API и Claude CLI: [настройка](bb/plugins/tg-mentions/README.md) |
 | GenUI | Живые таблицы, графики и формы в ответах агента (сторонний, ставится из репозитория автора) |
 
 ### Шаблоны правил
@@ -63,6 +64,7 @@ bb plugin install about-me@bb-kit
 bb plugin install agents@bb-kit
 bb plugin install genui@bb-kit
 bb plugin install open-in-app@bb-kit   # только Windows
+bb plugin install tg-mentions@bb-kit   # дальше шаги в bb/plugins/tg-mentions/README.md
 ```
 
 После установки «О себе»: Settings → Installed plugins → О себе → заполните шаблон.

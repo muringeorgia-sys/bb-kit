@@ -15,3 +15,5 @@ third_party/superpowers/tests/brainstorm-server/branding.test.js:assign
 third_party/superpowers/tests/brainstorm-server/lifecycle.test.js:assign
 third_party/superpowers/tests/brainstorm-server/server.test.js:assign
 third_party/superpowers/tests/claude-code/test-subagent-driven-development-integration.sh:email
+# тестовый id супергруппы в офлайн-тесте, не реальный чат
+bb/plugins/tg-mentions/core/test_core.mjs:telegram-chat

@@ -33,6 +33,15 @@
       "source": { "git": { "url": "https://github.com/muringeorgia-sys/bb-kit.git", "subdir": "bb/plugins/open-in-app", "ref": "main" } }
     },
     {
+      "id": "tg-mentions",
+      "displayName": "Ответы TG",
+      "description": "Упоминания в Telegram: контекст, 3 варианта ответа в вашем тоне, отправка по кнопке или черновик в Telegram; учится на каждом ответе. Нужны telegram-mcp и Claude CLI.",
+      "icon": "MessageSquare",
+      "tags": ["telegram", "messaging", "ai"],
+      "author": { "name": "muringeorgia-sys", "github": "muringeorgia-sys" },
+      "source": { "git": { "url": "https://github.com/muringeorgia-sys/bb-kit.git", "subdir": "bb/plugins/tg-mentions", "ref": "main" } }
+    },
+    {
       "id": "genui",
       "displayName": "GenUI",
       "description": "Сторонний (ComicBit): живые блоки интерфейса в ответах агента — таблицы, графики, формы. Ставится из репозитория автора.",

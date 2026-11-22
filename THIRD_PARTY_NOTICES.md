@@ -10,3 +10,4 @@
 | `third_party/karpathy` | forrestchang, github.com/forrestchang/andrej-karpathy-skills (коммит 2c60614) | MIT | копия; у автора лицензия заявлена в README и plugin.json без файла — стандартный текст MIT добавлен в `LICENSE` |
 | Плагин Claude Code `caveman` | Julius Brussee, github.com/JuliusBrussee/caveman | Apache-2.0 | не копируется: каталог ставит его из репозитория автора |
 | Плагин bb `genui` | ComicBit, github.com/ComicBit/bb-plugin-genui | см. репозиторий автора | не копируется: каталог ставит его из репозитория автора |
+| telegram-mcp для плагина bb `tg-mentions` | chigwell, l1v0n1 — github.com/chigwell/telegram-mcp (проверен коммит 6072a24) | Apache-2.0 | не копируется: пользователь ставит его сам по README плагина |
