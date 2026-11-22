@@ -1,0 +1,8 @@
+{
+  "name": "pm-research",
+  "version": "1.0.0",
+  "description": "Исследования по AJTBD Ивана Замесина: гайд интервью B2C и B2B, рекрутинг респондентов, UX-тест прототипа.",
+  "author": { "name": "muringeorgia-sys", "url": "https://github.com/muringeorgia-sys" },
+  "license": "CC-BY-NC-SA-4.0",
+  "keywords": ["product", "jtbd", "interview", "ux-test", "research"]
+}

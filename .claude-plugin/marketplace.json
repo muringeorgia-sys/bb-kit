@@ -1,0 +1,45 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "bb-kit",
+  "description": "Сборка продакт-менеджера для Claude Code: навыки мышления, исследований и приёмки релиза, плюс проверенные сторонние плагины.",
+  "owner": {
+    "name": "muringeorgia-sys",
+    "url": "https://github.com/muringeorgia-sys"
+  },
+  "plugins": [
+    {
+      "name": "pm-thinking",
+      "source": "./plugins/pm-thinking",
+      "description": "Разбор идеи вопросами, «скажи проще», что изменилось, где я остановился, задача глубже, уроки треда.",
+      "license": "MIT",
+      "category": "productivity"
+    },
+    {
+      "name": "pm-research",
+      "source": "./plugins/pm-research",
+      "description": "Гайд AJTBD-интервью B2C и B2B, рекрутинг респондентов, UX-тест прототипа.",
+      "license": "CC-BY-NC-SA-4.0",
+      "category": "productivity"
+    },
+    {
+      "name": "pm-delivery",
+      "source": "./plugins/pm-delivery",
+      "description": "Приёмка релиза: критерии приёмки из PRD → чек-лист → таблица расхождений.",
+      "license": "MIT",
+      "category": "productivity"
+    },
+    {
+      "name": "humanizer",
+      "source": "./third_party/humanizer",
+      "description": "Сторонний (blader/humanizer, MIT): убирает из текста признаки «написано ИИ», не меняя смысла.",
+      "license": "MIT",
+      "category": "productivity"
+    },
+    {
+      "name": "caveman",
+      "source": { "source": "github", "repo": "JuliusBrussee/caveman" },
+      "description": "Сторонний (JuliusBrussee/caveman, Apache-2.0): сжатые ответы без воды. Ставится из репозитория автора.",
+      "category": "productivity"
+    }
+  ]
+}

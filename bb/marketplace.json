@@ -1,0 +1,45 @@
+{
+  "$schema": "https://getbb.app/schemas/marketplace-v2.schema.json",
+  "schemaVersion": 2,
+  "name": "bb-kit",
+  "displayName": "bb-kit",
+  "description": "Панели и помощники для bb из сборки bb-kit плюс проверенный сторонний плагин GenUI.",
+  "plugins": [
+    {
+      "id": "agents",
+      "displayName": "Агенты",
+      "description": "Субагенты Claude (~/.claude/agents): включить, выключить, редактировать, создать, удалить, запустить.",
+      "icon": "Bot",
+      "tags": ["agents", "claude"],
+      "author": { "name": "muringeorgia-sys", "github": "muringeorgia-sys" },
+      "source": { "git": { "url": "https://github.com/muringeorgia-sys/bb-kit.git", "subdir": "bb/plugins/agents", "ref": "main" } }
+    },
+    {
+      "id": "about-me",
+      "displayName": "О себе",
+      "description": "Паспорт пользователя: кто вы, цели, ограничения, как отвечать. Текст добавляется в инструкции каждого треда во всех проектах.",
+      "icon": "User",
+      "tags": ["instructions", "profile"],
+      "author": { "name": "muringeorgia-sys", "github": "muringeorgia-sys" },
+      "source": { "git": { "url": "https://github.com/muringeorgia-sys/bb-kit.git", "subdir": "bb/plugins/about-me", "ref": "main" } }
+    },
+    {
+      "id": "open-in-app",
+      "displayName": "Open In App",
+      "description": "Windows: ссылки на pptx, pdf, docx, xlsx в чате открываются в приложении по умолчанию.",
+      "icon": "ExternalLink",
+      "tags": ["files", "windows"],
+      "author": { "name": "muringeorgia-sys", "github": "muringeorgia-sys" },
+      "source": { "git": { "url": "https://github.com/muringeorgia-sys/bb-kit.git", "subdir": "bb/plugins/open-in-app", "ref": "main" } }
+    },
+    {
+      "id": "genui",
+      "displayName": "GenUI",
+      "description": "Сторонний (ComicBit): живые блоки интерфейса в ответах агента — таблицы, графики, формы. Ставится из репозитория автора.",
+      "icon": "LayoutDashboard",
+      "tags": ["ui", "third-party"],
+      "author": { "name": "ComicBit", "github": "ComicBit" },
+      "source": { "git": { "url": "https://github.com/ComicBit/bb-plugin-genui.git", "range": ">=0.3.0 <1.0.0" } }
+    }
+  ]
+}

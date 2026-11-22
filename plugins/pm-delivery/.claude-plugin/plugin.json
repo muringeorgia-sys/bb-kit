@@ -1,0 +1,8 @@
+{
+  "name": "pm-delivery",
+  "version": "1.0.0",
+  "description": "Приёмка релиза глазами продакта: критерии приёмки из PRD → чек-лист с типом проверки → таблица расхождений.",
+  "author": { "name": "muringeorgia-sys", "url": "https://github.com/muringeorgia-sys" },
+  "license": "MIT",
+  "keywords": ["product", "release", "acceptance", "qa"]
+}

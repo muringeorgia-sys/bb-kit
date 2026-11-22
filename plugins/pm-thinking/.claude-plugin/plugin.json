@@ -1,0 +1,8 @@
+{
+  "name": "pm-thinking",
+  "version": "1.0.0",
+  "description": "Думать и не терять контекст: разбор идеи вопросами, «скажи проще», что изменилось за долгий прогон, где я остановился, задача глубже, уроки треда в правки скиллов.",
+  "author": { "name": "muringeorgia-sys", "url": "https://github.com/muringeorgia-sys" },
+  "license": "MIT",
+  "keywords": ["product", "thinking", "context", "skills"]
+}

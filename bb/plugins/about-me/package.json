@@ -1,0 +1,22 @@
+{
+  "name": "bb-plugin-about-me",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "bb": ">=0.46",
+    "bbPluginSdk": ">=0.6.37"
+  },
+  "bb": {
+    "name": "О себе",
+    "description": "Паспорт пользователя: текст из настроек подставляется в инструкции каждого треда во всех проектах",
+    "branding": {
+      "icon": "User"
+    },
+    "server": "./server.ts"
+  },
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.6.37",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
