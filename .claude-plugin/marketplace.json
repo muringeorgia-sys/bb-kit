@@ -36,6 +36,20 @@
       "category": "productivity"
     },
     {
+      "name": "superpowers",
+      "source": "./third_party/superpowers",
+      "description": "Сторонний (obra/superpowers, Jesse Vincent, MIT): навыки разработки — TDD, отладка, планы, ревью, работа с субагентами.",
+      "license": "MIT",
+      "category": "development"
+    },
+    {
+      "name": "andrej-karpathy-skills",
+      "source": "./third_party/karpathy",
+      "description": "Сторонний (forrestchang, MIT): правила против типичных ошибок ИИ в коде — без переусложнения, точечные правки, проверяемые критерии.",
+      "license": "MIT",
+      "category": "development"
+    },
+    {
       "name": "caveman",
       "source": { "source": "github", "repo": "JuliusBrussee/caveman" },
       "description": "Сторонний (JuliusBrussee/caveman, Apache-2.0): сжатые ответы без воды. Ставится из репозитория автора.",

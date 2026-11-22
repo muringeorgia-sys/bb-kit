@@ -18,6 +18,8 @@
 | | `ux-test` | UX-тест прототипа: сценарий, протокол, сводка проблем, «чинить / стоп» | «UX-тест», «проверь прототип на людях» |
 | pm-delivery | `release-check` | Приёмка релиза: критерии приёмки из PRD → чек-лист → таблица расхождений | «проверь релиз» |
 | humanizer | `humanizer` | Убирает из текста признаки «написано ИИ» (сторонний, MIT) | «очеловечь текст» |
+| superpowers | 15 навыков | Разработка: TDD, отладка, планы, ревью, субагенты (сторонний, MIT) | сами по задаче |
+| andrej-karpathy-skills | `karpathy-guidelines` | Правила против типичных ошибок ИИ в коде (сторонний, MIT) | при работе с кодом |
 | caveman | `caveman` | Сжатые ответы без воды (сторонний, ставится из репозитория автора) | `/caveman` |
 
 ### Панели bb
@@ -46,6 +48,8 @@ claude plugin install pm-thinking@bb-kit
 claude plugin install pm-research@bb-kit
 claude plugin install pm-delivery@bb-kit
 claude plugin install humanizer@bb-kit
+claude plugin install superpowers@bb-kit
+claude plugin install andrej-karpathy-skills@bb-kit
 claude plugin install caveman@bb-kit
 ```
 

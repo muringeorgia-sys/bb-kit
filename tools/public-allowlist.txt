@@ -1,0 +1,17 @@
+# Проверено 22.11.2026: публичные email авторов superpowers и тестовые токены-заглушки в их тестах.
+third_party/superpowers/.antigravity-plugin/plugin.json:email
+third_party/superpowers/.claude-plugin/marketplace.json:email
+third_party/superpowers/.claude-plugin/plugin.json:email
+third_party/superpowers/.codex-plugin/plugin.json:email
+third_party/superpowers/.cursor-plugin/plugin.json:email
+third_party/superpowers/.devin-plugin/plugin.json:email
+third_party/superpowers/.kimi-plugin/plugin.json:email
+third_party/superpowers/.muse-plugin/marketplace.json:email
+third_party/superpowers/CODE_OF_CONDUCT.md:email
+third_party/superpowers/README.md:email
+third_party/superpowers/docs/superpowers/specs/2026-10-06-antigravity-marketplace-design.md:email
+third_party/superpowers/tests/brainstorm-server/auth.test.js:assign
+third_party/superpowers/tests/brainstorm-server/branding.test.js:assign
+third_party/superpowers/tests/brainstorm-server/lifecycle.test.js:assign
+third_party/superpowers/tests/brainstorm-server/server.test.js:assign
+third_party/superpowers/tests/claude-code/test-subagent-driven-development-integration.sh:email
