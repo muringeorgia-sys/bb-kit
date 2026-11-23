@@ -8,6 +8,13 @@
   },
   "plugins": [
     {
+      "name": "bb-kit-setup",
+      "source": "./plugins/bb-kit-setup",
+      "description": "Установка и настройка bb-kit по ссылке: плагины, паспорт пользователя, подстройка под продукт, команду, Jira и Telegram.",
+      "license": "MIT",
+      "category": "productivity"
+    },
+    {
       "name": "pm-thinking",
       "source": "./plugins/pm-thinking",
       "description": "Разбор идеи вопросами, «скажи проще», что изменилось, где я остановился, задача глубже, уроки треда.",

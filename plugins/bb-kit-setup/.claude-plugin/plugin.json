@@ -1,0 +1,8 @@
+{
+  "name": "bb-kit-setup",
+  "version": "1.0.0",
+  "description": "Установка и настройка bb-kit по ссылке: плагины Claude Code, bb и Codex, паспорт пользователя, подстройка плагинов под продукт, команду, Jira и Telegram.",
+  "author": { "name": "muringeorgia-sys", "url": "https://github.com/muringeorgia-sys" },
+  "license": "MIT",
+  "keywords": ["setup", "onboarding", "bb"]
+}
