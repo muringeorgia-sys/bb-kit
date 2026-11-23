@@ -17,3 +17,6 @@ third_party/superpowers/tests/brainstorm-server/server.test.js:assign
 third_party/superpowers/tests/claude-code/test-subagent-driven-development-integration.sh:email
 # тестовый id супергруппы в офлайн-тесте, не реальный чат
 bb/plugins/tg-mentions/core/test_core.mjs:telegram-chat
+# шаблонный адрес-пример Jira (your-company) в настройках Релизов
+bb/plugins/releases/README.md:atlassian
+bb/plugins/releases/server.ts:atlassian

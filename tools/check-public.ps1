@@ -7,7 +7,7 @@ $root = Split-Path $PSScriptRoot -Parent
 
 $rules = [ordered]@{
   # Рабочие и личные данные
-  'work'            = '(?i)mashina|redash|jira|confluence|mbank|мбанк|house\.kg|lalafo|clickhouse|mad\.kg|сэвэн|express leasing|риом|бишкек|дилер|госномер'
+  'work'            = '(?i)mashina|redash|confluence|mbank|мбанк|house\.kg|lalafo|clickhouse|mad\.kg|сэвэн|express leasing|риом|бишкек|дилер|госномер'
   'project-paths'   = '(?i)Skills-Results|nmt-base|NMT-Дополнения|_ВИКИ|05_logs|03_scripts|OneDrive|_СЛУЖЕБНОЕ'
   'personal'        = '(?i)ueabq|isichenko|\boleg\b|олег'
   'tracker-keys'    = '\b(PRODUCT|MASH|MOD|DESIGN)-\d+\b'
