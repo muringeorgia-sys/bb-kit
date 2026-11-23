@@ -29,6 +29,13 @@
       "category": "productivity"
     },
     {
+      "name": "prd-pipeline",
+      "source": "./plugins/prd-pipeline",
+      "description": "Конвейер PRD: навык /prd (Lite и Full, концепция, ревью, сравнение «сейчас / будет», публикация) и 8 агентов prd-*.",
+      "license": "MIT",
+      "category": "productivity"
+    },
+    {
       "name": "humanizer",
       "source": "./third_party/humanizer",
       "description": "Сторонний (blader/humanizer, MIT): убирает из текста признаки «написано ИИ», не меняя смысла.",
@@ -51,7 +58,10 @@
     },
     {
       "name": "caveman",
-      "source": { "source": "github", "repo": "JuliusBrussee/caveman" },
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      },
       "description": "Сторонний (JuliusBrussee/caveman, Apache-2.0): сжатые ответы без воды. Ставится из репозитория автора.",
       "category": "productivity"
     }

@@ -17,6 +17,7 @@
 | pm-research | `ajtbd-interview-guide` | Гайд AJTBD-интервью B2C и B2B, скрипты, рекрутинг респондентов | «гайд интервью», «B2B-интервью» |
 | | `ux-test` | UX-тест прототипа: сценарий, протокол, сводка проблем, «чинить / стоп» | «UX-тест», «проверь прототип на людях» |
 | pm-delivery | `release-check` | Приёмка релиза: критерии приёмки из PRD → чек-лист → таблица расхождений | «проверь релиз» |
+| prd-pipeline | `prd` + 8 агентов `prd-*` | PRD на фичу: Lite и Full, концепция, ревью, «сейчас / будет», публикация в вики и трекер. Данные продукта — в `skills/prd/references/product-context.md` | «напиши PRD», /prd |
 | humanizer | `humanizer` | Убирает из текста признаки «написано ИИ» (сторонний, MIT) | «очеловечь текст» |
 | superpowers | 15 навыков | Разработка: TDD, отладка, планы, ревью, субагенты (сторонний, MIT) | сами по задаче |
 | andrej-karpathy-skills | `karpathy-guidelines` | Правила против типичных ошибок ИИ в коде (сторонний, MIT) | при работе с кодом |
@@ -30,6 +31,9 @@
 | Агенты | Список субагентов Claude: включить, выключить, редактировать, создать, запустить |
 | Open In App | Windows: ссылки на pptx, pdf, docx, xlsx открываются в приложении по умолчанию |
 | Ответы TG | Упоминания в Telegram: 3 варианта ответа в вашем тоне, отправка по кнопке, обучение на ваших ответах. Нужны telegram-mcp, ключи Telegram API и Claude CLI: [настройка](bb/plugins/tg-mentions/README.md) |
+| Релизы | Релизы по вашей Jira: итог прошлого, прогноз текущего, готовность следующего, кейсы вне нормы, правки по кнопке, сводки и бот в Telegram. Нужны Jira Cloud (адрес, email, API-токен), ключи проектов, список продуктов: [настройка](bb/plugins/releases/README.md) |
+| Конвейер PRD | Цепочка, агенты, параметры и тексты навыка /prd с правкой, черновики ИИ, журнал и откат. Нужен плагин Claude `prd-pipeline`: [настройка](bb/plugins/prd-pipeline/README.md) |
+| Выручка фич | Оценка выручки фич: сводка релиза, путь числа, «что если», ICE для приоритизации, замеры. Демо-данные из коробки; нужен Python 3.10+ с openpyxl, трекер по желанию: [настройка](bb/plugins/feature-revenue/README.md) |
 | GenUI | Живые таблицы, графики и формы в ответах агента (сторонний, ставится из репозитория автора) |
 
 ### Шаблоны правил
@@ -48,6 +52,7 @@ claude plugin marketplace add muringeorgia-sys/bb-kit
 claude plugin install pm-thinking@bb-kit
 claude plugin install pm-research@bb-kit
 claude plugin install pm-delivery@bb-kit
+claude plugin install prd-pipeline@bb-kit
 claude plugin install humanizer@bb-kit
 claude plugin install superpowers@bb-kit
 claude plugin install andrej-karpathy-skills@bb-kit
@@ -65,6 +70,9 @@ bb plugin install agents@bb-kit
 bb plugin install genui@bb-kit
 bb plugin install open-in-app@bb-kit   # только Windows
 bb plugin install tg-mentions@bb-kit   # дальше шаги в bb/plugins/tg-mentions/README.md
+bb plugin install releases@bb-kit      # настройка: bb/plugins/releases/README.md
+bb plugin install prd-pipeline@bb-kit  # нужен Claude-плагин prd-pipeline
+bb plugin install feature-revenue@bb-kit  # нужен Python 3.10+ с openpyxl
 ```
 
 После установки «О себе»: Settings → Installed plugins → О себе → заполните шаблон.

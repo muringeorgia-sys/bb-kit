@@ -10,45 +10,171 @@
       "displayName": "Агенты",
       "description": "Субагенты Claude (~/.claude/agents): включить, выключить, редактировать, создать, удалить, запустить.",
       "icon": "Bot",
-      "tags": ["agents", "claude"],
-      "author": { "name": "muringeorgia-sys", "github": "muringeorgia-sys" },
-      "source": { "git": { "url": "https://github.com/muringeorgia-sys/bb-kit.git", "subdir": "bb/plugins/agents", "ref": "main" } }
+      "tags": [
+        "agents",
+        "claude"
+      ],
+      "author": {
+        "name": "muringeorgia-sys",
+        "github": "muringeorgia-sys"
+      },
+      "source": {
+        "git": {
+          "url": "https://github.com/muringeorgia-sys/bb-kit.git",
+          "subdir": "bb/plugins/agents",
+          "ref": "main"
+        }
+      }
     },
     {
       "id": "about-me",
       "displayName": "О себе",
       "description": "Паспорт пользователя: кто вы, цели, ограничения, как отвечать. Текст добавляется в инструкции каждого треда во всех проектах.",
       "icon": "User",
-      "tags": ["instructions", "profile"],
-      "author": { "name": "muringeorgia-sys", "github": "muringeorgia-sys" },
-      "source": { "git": { "url": "https://github.com/muringeorgia-sys/bb-kit.git", "subdir": "bb/plugins/about-me", "ref": "main" } }
+      "tags": [
+        "instructions",
+        "profile"
+      ],
+      "author": {
+        "name": "muringeorgia-sys",
+        "github": "muringeorgia-sys"
+      },
+      "source": {
+        "git": {
+          "url": "https://github.com/muringeorgia-sys/bb-kit.git",
+          "subdir": "bb/plugins/about-me",
+          "ref": "main"
+        }
+      }
     },
     {
       "id": "open-in-app",
       "displayName": "Open In App",
       "description": "Windows: ссылки на pptx, pdf, docx, xlsx в чате открываются в приложении по умолчанию.",
       "icon": "ExternalLink",
-      "tags": ["files", "windows"],
-      "author": { "name": "muringeorgia-sys", "github": "muringeorgia-sys" },
-      "source": { "git": { "url": "https://github.com/muringeorgia-sys/bb-kit.git", "subdir": "bb/plugins/open-in-app", "ref": "main" } }
+      "tags": [
+        "files",
+        "windows"
+      ],
+      "author": {
+        "name": "muringeorgia-sys",
+        "github": "muringeorgia-sys"
+      },
+      "source": {
+        "git": {
+          "url": "https://github.com/muringeorgia-sys/bb-kit.git",
+          "subdir": "bb/plugins/open-in-app",
+          "ref": "main"
+        }
+      }
     },
     {
       "id": "tg-mentions",
       "displayName": "Ответы TG",
       "description": "Упоминания в Telegram: контекст, 3 варианта ответа в вашем тоне, отправка по кнопке или черновик в Telegram; учится на каждом ответе. Нужны telegram-mcp и Claude CLI.",
       "icon": "MessageSquare",
-      "tags": ["telegram", "messaging", "ai"],
-      "author": { "name": "muringeorgia-sys", "github": "muringeorgia-sys" },
-      "source": { "git": { "url": "https://github.com/muringeorgia-sys/bb-kit.git", "subdir": "bb/plugins/tg-mentions", "ref": "main" } }
+      "tags": [
+        "telegram",
+        "messaging",
+        "ai"
+      ],
+      "author": {
+        "name": "muringeorgia-sys",
+        "github": "muringeorgia-sys"
+      },
+      "source": {
+        "git": {
+          "url": "https://github.com/muringeorgia-sys/bb-kit.git",
+          "subdir": "bb/plugins/tg-mentions",
+          "ref": "main"
+        }
+      }
+    },
+    {
+      "id": "releases",
+      "displayName": "Релизы",
+      "description": "Релизы по вашей Jira: итог прошлого, прогноз текущего, готовность следующего, кейсы вне нормы, правки статуса и релиза; один или несколько продуктов; сводка и бот в Telegram.",
+      "icon": "Rocket",
+      "tags": [
+        "jira",
+        "releases",
+        "telegram"
+      ],
+      "author": {
+        "name": "muringeorgia-sys",
+        "github": "muringeorgia-sys"
+      },
+      "source": {
+        "git": {
+          "url": "https://github.com/muringeorgia-sys/bb-kit.git",
+          "subdir": "bb/plugins/releases",
+          "ref": "main"
+        }
+      }
+    },
+    {
+      "id": "prd-pipeline",
+      "displayName": "Конвейер PRD",
+      "description": "Навык /prd: цепочка агентов, модели, параметры и тексты с правкой; правка словами через черновик ИИ, журнал, откат, эталон по кнопке. Нужен плагин Claude prd-pipeline.",
+      "icon": "Workflow",
+      "tags": [
+        "prd",
+        "agents",
+        "claude"
+      ],
+      "author": {
+        "name": "muringeorgia-sys",
+        "github": "muringeorgia-sys"
+      },
+      "source": {
+        "git": {
+          "url": "https://github.com/muringeorgia-sys/bb-kit.git",
+          "subdir": "bb/plugins/prd-pipeline",
+          "ref": "main"
+        }
+      }
+    },
+    {
+      "id": "feature-revenue",
+      "displayName": "Выручка фич",
+      "description": "Оценка выручки фич вашего продукта: сводка релиза, путь числа по фиче, «что если», ICE для приоритизации, замеры. Демо-данные из коробки, трекер по желанию. Нужен Python 3.10+ с openpyxl.",
+      "icon": "Calculator",
+      "tags": [
+        "product",
+        "revenue",
+        "ice"
+      ],
+      "author": {
+        "name": "muringeorgia-sys",
+        "github": "muringeorgia-sys"
+      },
+      "source": {
+        "git": {
+          "url": "https://github.com/muringeorgia-sys/bb-kit.git",
+          "subdir": "bb/plugins/feature-revenue",
+          "ref": "main"
+        }
+      }
     },
     {
       "id": "genui",
       "displayName": "GenUI",
       "description": "Сторонний (ComicBit): живые блоки интерфейса в ответах агента — таблицы, графики, формы. Ставится из репозитория автора.",
       "icon": "LayoutDashboard",
-      "tags": ["ui", "third-party"],
-      "author": { "name": "ComicBit", "github": "ComicBit" },
-      "source": { "git": { "url": "https://github.com/ComicBit/bb-plugin-genui.git", "range": ">=0.3.0 <1.0.0" } }
+      "tags": [
+        "ui",
+        "third-party"
+      ],
+      "author": {
+        "name": "ComicBit",
+        "github": "ComicBit"
+      },
+      "source": {
+        "git": {
+          "url": "https://github.com/ComicBit/bb-plugin-genui.git",
+          "range": ">=0.3.0 <1.0.0"
+        }
+      }
     }
   ]
 }

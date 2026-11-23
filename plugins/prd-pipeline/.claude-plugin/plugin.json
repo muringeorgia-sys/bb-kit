@@ -1,0 +1,8 @@
+{
+  "name": "prd-pipeline",
+  "version": "1.0.0",
+  "description": "Конвейер PRD: навык /prd (Lite и Full, концепция, ревью, сравнение «сейчас / будет», публикация в вики и трекер) и 8 агентов prd-*. Данные продукта - в одном файле product-context.md.",
+  "author": { "name": "muringeorgia-sys", "url": "https://github.com/muringeorgia-sys" },
+  "license": "MIT",
+  "keywords": ["product", "prd", "requirements", "agents"]
+}

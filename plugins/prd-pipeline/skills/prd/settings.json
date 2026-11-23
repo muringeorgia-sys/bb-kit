@@ -1,0 +1,1215 @@
+{
+  "version": 1,
+  "note": "Источник правды скилла prd: параметры, цепочки, роли. Правится в панели bb «Конвейер PRD» (плагин prd-pipeline из bb-kit). Тексты скилла держат значения в метках <!--p:…-->; руками метки не менять.",
+  "modelNames": {
+    "opus": "Opus 5.5",
+    "sonnet": "Sonnet 5.5",
+    "haiku": "Haiku 4.5"
+  },
+  "params": {
+    "prd.lite.words": {
+      "group": "Объём PRD",
+      "label": "Слов в разделах 1–4, Lite",
+      "type": "number",
+      "value": 600,
+      "min": 100,
+      "max": 5000
+    },
+    "prd.full.words": {
+      "group": "Объём PRD",
+      "label": "Слов в разделах 1–4, Full",
+      "type": "number",
+      "value": 1200,
+      "min": 100,
+      "max": 8000
+    },
+    "prd.lite.criteria": {
+      "group": "Объём PRD",
+      "label": "Критериев приёмки, Lite, до",
+      "type": "number",
+      "value": 8,
+      "min": 1,
+      "max": 40
+    },
+    "prd.full.criteria": {
+      "group": "Объём PRD",
+      "label": "Критериев приёмки, Full, до",
+      "type": "number",
+      "value": 12,
+      "min": 1,
+      "max": 60
+    },
+    "mode.default": {
+      "group": "Порядок работы",
+      "label": "Режим по умолчанию",
+      "type": "choice",
+      "value": "lite",
+      "options": [
+        {
+          "value": "lite",
+          "label": "Lite"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ],
+      "slots": {
+        "intake": {
+          "lite": "**Режим: Lite по умолчанию.** Full - только по явной команде («полный PRD», «Full», «с исследованием»). Задача похожа на крупную - одной строкой напомни про Full и продолжай в Lite.",
+          "full": "**Режим: Full по умолчанию.** Lite - только по явной команде («Lite», «мини-ТЗ», «коротко»). Задача похожа на точечную правку - одной строкой напомни про Lite и продолжай в Full."
+        },
+        "desc": {
+          "lite": "Lite по умолчанию, Full по команде",
+          "full": "Full по умолчанию, Lite по команде"
+        }
+      },
+      "plain": [
+        {
+          "file": "SKILL.md",
+          "slot": "desc"
+        }
+      ]
+    },
+    "concept.default": {
+      "group": "Порядок работы",
+      "label": "Концепция до PRD",
+      "type": "choice",
+      "value": "on",
+      "options": [
+        {
+          "value": "on",
+          "label": "Всегда"
+        },
+        {
+          "value": "off",
+          "label": "Только по команде"
+        }
+      ],
+      "slots": {
+        "intro": {
+          "on": "До PRD в Lite и Full - **концепция**: идея фичи, 3-5 шагов глазами пользователя и до {{concept.questions}} решений PO, до {{concept.words}} слов, без деталей. PO отвечает на вопросы, детали конвейер дорабатывает сам (стоп-точка «Концепция»). Пропуск - только по команде «без концепции».",
+          "off": "Концепция до PRD - только по команде «с концепцией»: идея фичи, 3-5 шагов глазами пользователя и до {{concept.questions}} решений PO, до {{concept.words}} слов, без деталей. Без этой команды шаг «концепция» и стоп-точку «Концепция» пропускай: Core PM получает задание «без концепции» и сразу пишет PRD, главные вопросы приходят после PRD."
+        }
+      }
+    },
+    "concept.words": {
+      "group": "Порядок работы",
+      "label": "Концепция, слов до",
+      "type": "number",
+      "value": 120,
+      "min": 30,
+      "max": 1000
+    },
+    "concept.questions": {
+      "group": "Порядок работы",
+      "label": "Решений PO в концепции, до",
+      "type": "number",
+      "value": 3,
+      "min": 1,
+      "max": 10,
+      "plain": [
+        {
+          "file": "references/contracts.md",
+          "pattern": "(1-{v} вопроса;"
+        }
+      ]
+    },
+    "materials.freshDays": {
+      "group": "Порядок работы",
+      "label": "Готовые материалы по экрану, дней",
+      "type": "number",
+      "value": 14,
+      "min": 1,
+      "max": 365
+    },
+    "brief.words": {
+      "group": "Файлы агентов",
+      "label": "brief.md, слов до",
+      "type": "number",
+      "value": 300,
+      "min": 50,
+      "max": 3000
+    },
+    "research.words": {
+      "group": "Файлы агентов",
+      "label": "Исследование сайта, слов до",
+      "type": "number",
+      "value": 600,
+      "min": 100,
+      "max": 5000
+    },
+    "metrics.words": {
+      "group": "Файлы агентов",
+      "label": "Метрики и гипотезы, слов до",
+      "type": "number",
+      "value": 400,
+      "min": 100,
+      "max": 5000
+    },
+    "options.words": {
+      "group": "Файлы агентов",
+      "label": "Направления решения, слов до",
+      "type": "number",
+      "value": 400,
+      "min": 100,
+      "max": 5000
+    },
+    "reviewer.model": {
+      "group": "Ревью",
+      "label": "Модель ревьюера (Codex)",
+      "type": "text",
+      "value": "gpt-6.1-sol",
+      "plain": [
+        {
+          "file": "references/review.md",
+          "pattern": "--model {v} "
+        },
+        {
+          "file": "references/routing.md",
+          "pattern": "--model {v} "
+        }
+      ]
+    },
+    "reviewer.effort": {
+      "group": "Ревью",
+      "label": "Уровень ревьюера",
+      "type": "select",
+      "value": "xhigh",
+      "options": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "plain": [
+        {
+          "file": "references/review.md",
+          "pattern": "--effort {v} "
+        },
+        {
+          "file": "references/routing.md",
+          "pattern": "--effort {v} "
+        }
+      ]
+    },
+    "review.lite.max": {
+      "group": "Ревью",
+      "label": "Замечаний ревью в Lite, до",
+      "type": "number",
+      "value": 10,
+      "min": 1,
+      "max": 50
+    },
+    "review.full.max": {
+      "group": "Ревью",
+      "label": "Замечаний ревью в Full, до",
+      "type": "number",
+      "value": 12,
+      "min": 1,
+      "max": 50
+    }
+  },
+  "roles": [
+    {
+      "id": "orchestrator",
+      "role": "Оркестратор",
+      "does": "Принимает задачу, задаёт вопросы, запускает агентов, склеивает и собирает файлы, проверяет публикацию. Сам требования не пишет",
+      "writes": [
+        "brief.md (+ решения PO по концепции)",
+        "run_log.md",
+        "research_brief.md"
+      ],
+      "runtime": "Основной тред со скиллом prd · модель треда (Opus)"
+    },
+    {
+      "id": "prd-site-researcher",
+      "role": "Site Researcher",
+      "does": "Снимает экраны продукта и бенчмарка: блоки, тексты, наблюдения. Только факты, без решений. По экземпляру на сайт",
+      "writes": [
+        "research_current.md",
+        "research_benchmark.md",
+        "evidence/"
+      ]
+    },
+    {
+      "id": "prd-product-analyst",
+      "role": "Product Analyst",
+      "does": "Ключевые метрики, факты поведения и гипотезы из ваших источников данных; разметка для раздела 5",
+      "writes": [
+        "metrics_and_hypotheses.md",
+        "section_5.md"
+      ]
+    },
+    {
+      "id": "prd-core-pm",
+      "role": "Core PM · Full",
+      "does": "Джобы и 2–3 направления решения, концепция для рекомендованного, черновик PRD (разделы 1, 2, 3, 6), правки по ревью, список «кому — что исправить»",
+      "writes": [
+        "solution_options.md",
+        "concept.md",
+        "<Фича>.md"
+      ]
+    },
+    {
+      "id": "prd-core-pm-lite",
+      "role": "Core PM · Lite",
+      "does": "Сначала концепция: идея, шаги, до 3 решений PO. После ответов пишет PRD целиком: 6 разделов и приложение «Текст»; правит по ревью",
+      "writes": [
+        "concept.md",
+        "<Фича>.md"
+      ]
+    },
+    {
+      "id": "prd-product-designer",
+      "role": "Product Designer",
+      "does": "Эскизы направлений для стоп-точки; раскладка desktop и mobile средней детализации, раздел 4, дизайн сайта; сравнение «сейчас в проде / будет» в Lite и Full",
+      "writes": [
+        "options_sketches.md",
+        "wireframes.md",
+        "section_4.md",
+        "<Фича>.design.html",
+        "before_after.json",
+        "<Фича>.before-after.html"
+      ]
+    },
+    {
+      "id": "prd-ux-writer",
+      "role": "UX Writer",
+      "does": "Тексты интерфейса по блокам B1, B2…; приложение «Текст»",
+      "writes": [
+        "copy_deck.md",
+        "section_text.md"
+      ]
+    },
+    {
+      "id": "reviewer",
+      "role": "Ревьюер",
+      "does": "Проверяет PRD по рубрике review.md. В Full — пакет: PRD, copy_deck, wireframes, solution_options",
+      "writes": [
+        "review_comments.md (только Full)"
+      ],
+      "runtime": "Codex: codex-companion · {{reviewer.model}} · {{reviewer.effort}}",
+      "fallback": "Codex недоступен — ревью не подменяется: конвейер доделывает без него и пишет «Codex: недоступен»"
+    },
+    {
+      "id": "prd-cleanup",
+      "role": "Чистка",
+      "does": "humanizer и проверка лимитов PRD скриптом prd_tools.js check",
+      "writes": [
+        "<Фича>.md (только правит)"
+      ]
+    },
+    {
+      "id": "prd-publisher",
+      "role": "Publisher",
+      "does": "Страница вики, вложения, эпик в трекере; сбор комментариев вики",
+      "writes": [
+        "страница вики",
+        "эпик <KEY-NNN>",
+        "wiki_comments.md"
+      ]
+    },
+    {
+      "id": "script",
+      "role": "Скрипт",
+      "does": "Сборка PRD из файлов авторов и проверка лимитов — без модели",
+      "writes": [
+        "<Фича>.md"
+      ],
+      "runtime": "node prd_tools.js assemble | check"
+    },
+    {
+      "id": "user",
+      "role": "Ты",
+      "does": "Отвечаешь на вопросы приёма, принимаешь главные решения по концепции, выбираешь направление на стоп-точке Full, отвечаешь на вопросы агентов",
+      "writes": [],
+      "runtime": "Вопросы приходят формой AskUserQuestion, до 4 за раз"
+    }
+  ],
+  "rules": [
+    {
+      "title": "Звезда, не цепочка",
+      "text": "Всех агентов вызывает только оркестратор. Агенты друг другу не пишут"
+    },
+    {
+      "title": "Обмен через файлы",
+      "text": "Всё лежит в <Фича>_материалы/. Один файл — один автор, чужие файлы не правят"
+    },
+    {
+      "title": "Оркестратор → агент",
+      "text": "Абсолютные пути входов, режим Lite или Full, путь результата"
+    },
+    {
+      "title": "Агент → оркестратор",
+      "text": "Путь к файлу, статус «готово», «частично» или «блокер», до 10 строк итога, списки «Вопросы» и «Допущения»"
+    },
+    {
+      "title": "Повторный проход",
+      "text": "SendMessage тому же агенту — контекст не перечитывается"
+    },
+    {
+      "title": "Концепция",
+      "text": "До PRD в Lite и Full: идея, шаги глазами пользователя и до {{concept.questions}} вопросов, без деталей. Главные решения ты принимаешь здесь, дальше конвейер работает сам"
+    },
+    {
+      "title": "Вопросы и допущения",
+      "text": "Главные решения — на концепции. После PRD приходят только новые вопросы пачкой через AskUserQuestion, допущения — списком в итоговом ответе. В PRD и вики их нет"
+    },
+    {
+      "title": "Сбой",
+      "text": "Один повтор тем же агентом, затем «частично» в ответе и run_log.md"
+    }
+  ],
+  "flows": {
+    "lite": {
+      "id": "lite",
+      "label": "Lite",
+      "short": "Lite",
+      "trigger": "/prd, «напиши PRD», «мини-ТЗ»",
+      "result": "<Фича>.md и <Фича>.before-after.html в папке спринта · лимит {{prd.lite.words}} слов в разделах 1–4, до {{prd.lite.criteria}} критериев приёмки",
+      "steps": [
+        {
+          "tag": "0",
+          "title": "Приём",
+          "groups": [
+            [
+              {
+                "actor": "user",
+                "via": "AskUserQuestion",
+                "label": "только то, чего нет во входе: кто пользователь, что меняем, как поймём, что готово"
+              }
+            ],
+            [
+              {
+                "actor": "orchestrator",
+                "in": [
+                  "вход",
+                  "каталог документов"
+                ],
+                "out": [
+                  "brief.md"
+                ]
+              }
+            ]
+          ],
+          "note": "Задача похожа на крупную — одной строкой напомнит про Full и продолжит в Lite.",
+          "handoff": "пути к brief.md и PRD",
+          "id": "lite-0",
+          "gen": false
+        },
+        {
+          "tag": "1",
+          "title": "Концепция",
+          "groups": [
+            [
+              {
+                "actor": "prd-core-pm-lite",
+                "via": "Agent",
+                "label": "проход «концепция»",
+                "in": [
+                  "brief.md",
+                  "прод продукта",
+                  "данные по external-systems.md"
+                ],
+                "out": [
+                  "concept.md: идея, 3–5 шагов, до {{concept.questions}} решений PO"
+                ],
+                "text": "`prd-core-pm-lite`, проход «концепция»: пути к `brief.md`, `concept.md` и PRD"
+              }
+            ]
+          ],
+          "note": "Без ответа пользователя даже концепция будет пустой — агент вернёт до 3 вопросов, оркестратор задаст их тебе и передаст ответы тому же агенту.",
+          "handoff": "concept.md",
+          "text": "Вернул вопросы вместо концепции - задай пользователю и передай ответы ему же.",
+          "id": "lite-1",
+          "gen": true,
+          "concept": true
+        },
+        {
+          "tag": "стоп",
+          "title": "Решения по концепции",
+          "kind": "stop",
+          "groups": [
+            [
+              {
+                "actor": "orchestrator",
+                "label": "в чат: ссылка, идея и шаги",
+                "in": [
+                  "concept.md"
+                ]
+              }
+            ],
+            [
+              {
+                "actor": "user",
+                "via": "AskUserQuestion",
+                "label": "до {{concept.questions}} вопросов, рекомендованный вариант первым; вопросов нет — «идея верна?»"
+              }
+            ],
+            [
+              {
+                "actor": "orchestrator",
+                "label": "запись ответов",
+                "out": [
+                  "brief.md: «Решения PO по концепции»"
+                ]
+              }
+            ]
+          ],
+          "note": "Без твоего ответа дальше не идёт. Правки идеи — агент обновляет концепцию, показ ещё раз; второй раунд последний. Пропуск — по команде «без концепции».",
+          "handoff": "решения PO — тому же агенту",
+          "text": "Стоп-точка «Концепция» (раздел ниже).",
+          "id": "lite-2",
+          "gen": true,
+          "concept": true
+        },
+        {
+          "tag": "2",
+          "title": "PRD целиком",
+          "groups": [
+            [
+              {
+                "actor": "prd-core-pm-lite",
+                "via": "SendMessage",
+                "label": "проход PRD",
+                "in": [
+                  "решения PO",
+                  "concept.md"
+                ],
+                "out": [
+                  "<Фича>.md: 6 разделов + «Текст»"
+                ],
+                "text": "Решения PO - тому же агенту через SendMessage: писать PRD"
+              }
+            ]
+          ],
+          "note": "Решения концепции становятся обычными требованиями и после PRD не переспрашиваются.",
+          "handoff": "PRD",
+          "joinPrev": true,
+          "id": "lite-3",
+          "gen": true
+        },
+        {
+          "tag": "3",
+          "title": "Ревью и сравнение «сейчас / будет»",
+          "groups": [
+            [
+              {
+                "actor": "reviewer",
+                "via": "Codex",
+                "label": "без --write",
+                "in": [
+                  "<Фича>.md"
+                ],
+                "out": [
+                  "замечания в ответе"
+                ],
+                "text": "ревью по `review.md` (Lite): Codex {{reviewer.model:code}} · {{reviewer.effort:code}}"
+              },
+              {
+                "actor": "prd-product-designer",
+                "via": "Agent",
+                "label": "сейчас / будет",
+                "in": [
+                  "<Фича>.md",
+                  "brief.md",
+                  "прод продукта"
+                ],
+                "out": [
+                  "before_after.json",
+                  "evidence/now_*, next_*",
+                  "<Фича>.before-after.html"
+                ],
+                "text": "`prd-product-designer` в режиме «сейчас / будет» (`run_in_background`) - пути к PRD, `brief.md`, папке материалов и `<Фича>.before-after.html`"
+              }
+            ]
+          ],
+          "note": "Параллельно: ревью Codex и дизайнер в фоне. Проход 3 изменил разделы 3, 6 или «Текст» — дизайнер пересобирает сравнение.",
+          "handoff": "замечания — тому же агенту, оркестратор их не оценивает",
+          "id": "lite-4",
+          "gen": true
+        },
+        {
+          "tag": "4",
+          "title": "Правки по ревью",
+          "groups": [
+            [
+              {
+                "actor": "prd-core-pm-lite",
+                "via": "SendMessage",
+                "label": "проход 3",
+                "in": [
+                  "замечания"
+                ],
+                "out": [
+                  "<Фича>.md"
+                ],
+                "text": "Замечания ревью передай `prd-core-pm-lite` через SendMessage на проход 3, сам не оценивай"
+              }
+            ]
+          ],
+          "text": "Проход 3 изменил раздел 3, 6 или «Текст» - дизайнеру через SendMessage: что изменилось, пересобрать сравнение.",
+          "joinPrev": true,
+          "id": "lite-5",
+          "gen": true
+        },
+        {
+          "tag": "5",
+          "title": "Чистка",
+          "groups": [
+            [
+              {
+                "actor": "prd-cleanup",
+                "via": "Agent",
+                "in": [
+                  "<Фича>.md"
+                ],
+                "out": [
+                  "<Фича>.md"
+                ],
+                "text": "`prd-cleanup`"
+              }
+            ]
+          ],
+          "text": "Отдай результат.",
+          "id": "lite-6",
+          "gen": true
+        },
+        {
+          "tag": "итог",
+          "title": "Сдача",
+          "kind": "final",
+          "groups": [
+            [
+              {
+                "actor": "user",
+                "via": "AskUserQuestion",
+                "label": "только новые вопросы агента пачкой"
+              }
+            ],
+            [
+              {
+                "actor": "orchestrator",
+                "out": [
+                  "ссылки на <Фича>.before-after.html и <Фича>.md",
+                  "строка в каталоге документов",
+                  "«Ревью: N замечаний, принял M»",
+                  "список «Допущения» в чат"
+                ]
+              }
+            ]
+          ],
+          "id": "lite-7",
+          "gen": false
+        }
+      ],
+      "gen": "list",
+      "numberFrom": 0,
+      "parallelLead": "Одним сообщением, параллельно: "
+    },
+    "full": {
+      "id": "full",
+      "label": "Full",
+      "short": "Full",
+      "trigger": "«полный PRD», «Full», «с исследованием»",
+      "result": "<Фича>.md + <Фича>.design.html + <Фича>.before-after.html + папка <Фича>_материалы · лимит {{prd.full.words}} слов в разделах 1–4, до {{prd.full.criteria}} критериев",
+      "steps": [
+        {
+          "tag": "0",
+          "title": "Приём",
+          "groups": [
+            [
+              {
+                "actor": "user",
+                "via": "AskUserQuestion",
+                "label": "масштаб · роль бенчмарка · эпик и релиз · мобильный образец"
+              }
+            ],
+            [
+              {
+                "actor": "orchestrator",
+                "in": [
+                  "вход",
+                  "каталог документов"
+                ],
+                "out": [
+                  "brief.md",
+                  "run_log.md"
+                ]
+              }
+            ]
+          ],
+          "note": "Показывает состав агентов, модели и оценку времени. Без твоего «да» не запускает. Материалы по экрану моложе 14 дней идут в brief готовыми — их агент не запускается.",
+          "handoff": "brief.md",
+          "id": "full-0",
+          "gen": false
+        },
+        {
+          "tag": "1",
+          "title": "Исследование и данные",
+          "groups": [
+            [
+              {
+                "actor": "prd-site-researcher",
+                "via": "Agent",
+                "label": "Продукт и бенчмарк",
+                "count": 2,
+                "in": [
+                  "brief.md"
+                ],
+                "out": [
+                  "research_current.md",
+                  "research_benchmark.md",
+                  "evidence/"
+                ],
+                "text": "`prd-site-researcher` на ваш продукт и на бенчмарк (шаблоны из `roles/site-researcher.md`, у каждого своя вкладка; мобильную версию - по `routing.md`, раздел «Браузер и съёмка»)"
+              },
+              {
+                "actor": "prd-product-analyst",
+                "via": "Agent",
+                "label": "проход 1",
+                "in": [
+                  "brief.md"
+                ],
+                "out": [
+                  "metrics_and_hypotheses.md"
+                ],
+                "text": "`prd-product-analyst` проход 1"
+              }
+            ],
+            [
+              {
+                "actor": "orchestrator",
+                "via": "bash",
+                "label": "склейка cat",
+                "in": [
+                  "research_current.md",
+                  "research_benchmark.md"
+                ],
+                "out": [
+                  "research_brief.md"
+                ]
+              }
+            ]
+          ],
+          "note": "У каждого исследователя своя вкладка bb-browser. Мобильная версия — по routing.md: мобильная вёрстка сайта скриптом или скриншоты с телефона.",
+          "handoff": "research_brief.md + metrics_and_hypotheses.md",
+          "join": ", ",
+          "text": "Проверь отчёты, затем `cat research_current.md research_benchmark.md > research_brief.md`.",
+          "id": "full-1",
+          "gen": true
+        },
+        {
+          "tag": "2",
+          "title": "Направления и концепция",
+          "groups": [
+            [
+              {
+                "actor": "prd-core-pm",
+                "via": "Agent",
+                "label": "проход 1",
+                "in": [
+                  "brief.md",
+                  "research_brief.md",
+                  "metrics_and_hypotheses.md"
+                ],
+                "out": [
+                  "solution_options.md",
+                  "concept.md"
+                ],
+                "text": "`prd-core-pm` проход 1 - `solution_options.md` и `concept.md` для рекомендованного направления"
+              }
+            ]
+          ],
+          "note": "Джобы со статусом «подтверждён данными» или «гипотеза», 2–3 направления, одно рекомендовано. Концепция — для рекомендованного. PRD ещё не пишет.",
+          "handoff": "solution_options.md + concept.md",
+          "id": "full-2",
+          "gen": true
+        },
+        {
+          "tag": "стоп",
+          "title": "Направление и решения по концепции",
+          "kind": "stop",
+          "groups": [
+            [
+              {
+                "actor": "prd-product-designer",
+                "via": "Agent",
+                "label": "эскизы направлений",
+                "in": [
+                  "solution_options.md",
+                  "research_brief.md",
+                  "evidence/"
+                ],
+                "out": [
+                  "options_sketches.md",
+                  "evidence/option_*.png"
+                ]
+              }
+            ],
+            [
+              {
+                "actor": "user",
+                "via": "AskUserQuestion",
+                "label": "первым — направление (или утверждаешь раскладку), дальше вопросы концепции"
+              }
+            ],
+            [
+              {
+                "actor": "orchestrator",
+                "label": "запись ответов",
+                "out": [
+                  "brief.md: «Решения PO по концепции»"
+                ]
+              }
+            ]
+          ],
+          "note": "Без твоего ответа дальше не идёт. Правки раскладки — снова дизайнер. Выбрано не рекомендованное направление — Core PM обновляет концепцию, спрашиваются только новые вопросы.",
+          "handoff": "выбранное направление + решения PO",
+          "text": "`prd-product-designer`, режим «эскизы направлений»: экран средней детализации на каждое направление, desktop и mobile. Если пользователь задал направление на приёме - одно направление, и вопрос не «какое выбрать», а «утверждаешь раскладку, что поправить». Прочитай `solution_options.md`, дай ссылки на картинки и концепцию. Одна форма `AskUserQuestion`: первым вопросом направление, дальше решения концепции (что не влезло - второй формой). Без ответа дальше не иди. Правки раскладки - снова дизайнер, затем вопрос ещё раз. Выбрано не рекомендованное направление - Core PM через SendMessage обновляет `concept.md`, ты спрашиваешь только новые решения. Показ концепции и запись ответов - по разделу «Стоп-точка «Концепция»».",
+          "id": "full-3",
+          "gen": true
+        },
+        {
+          "tag": "3",
+          "title": "Черновик PRD",
+          "groups": [
+            [
+              {
+                "actor": "prd-core-pm",
+                "via": "SendMessage",
+                "label": "проход 2",
+                "in": [
+                  "выбранное направление",
+                  "решения PO"
+                ],
+                "out": [
+                  "<Фича>.md: разделы 1, 2, 3, 6",
+                  "метки разделов 4, 5, «Текст»",
+                  "строка «Блоки экрана»"
+                ],
+                "text": "Тот же `prd-core-pm` через SendMessage, проход 2 - направление и решения PO, PRD с метками разделов 4, 5 и «Текст», строкой «Блоки экрана»"
+              }
+            ]
+          ],
+          "handoff": "PRD с блоками B1, B2… — общий ключ для трёх авторов",
+          "id": "full-4",
+          "gen": true
+        },
+        {
+          "tag": "4",
+          "title": "Тексты, раскладка, разметка",
+          "groups": [
+            [
+              {
+                "actor": "prd-ux-writer",
+                "via": "Agent",
+                "in": [
+                  "PRD: разделы 1, 3",
+                  "solution_options.md",
+                  "research_brief.md"
+                ],
+                "out": [
+                  "copy_deck.md",
+                  "section_text.md"
+                ],
+                "text": "`prd-ux-writer` - `copy_deck.md`, `section_text.md`"
+              },
+              {
+                "actor": "prd-product-designer",
+                "via": "SendMessage",
+                "in": [
+                  "PRD: разделы 1, 3",
+                  "solution_options.md",
+                  "research_brief.md",
+                  "copy_deck.md, если есть"
+                ],
+                "out": [
+                  "wireframes.md",
+                  "section_4.md",
+                  "<Фича>.design.html",
+                  "<Фича>.before-after.html"
+                ],
+                "text": "`prd-product-designer` - `wireframes.md`, `section_4.md`, `<Фича>.design.html`, затем `<Фича>.before-after.html`"
+              },
+              {
+                "actor": "prd-product-analyst",
+                "via": "SendMessage",
+                "label": "проход 2",
+                "in": [
+                  "PRD: разделы 1, 3, 6"
+                ],
+                "out": [
+                  "section_5.md"
+                ],
+                "text": "`prd-product-analyst` проход 2 - `section_5.md`"
+              }
+            ]
+          ],
+          "handoff": "section_4.md · section_5.md · section_text.md",
+          "id": "full-5",
+          "gen": true
+        },
+        {
+          "tag": "5",
+          "title": "Сборка и ревью",
+          "groups": [
+            [
+              {
+                "actor": "script",
+                "via": "bash",
+                "label": "assemble",
+                "in": [
+                  "section_4.md",
+                  "section_5.md",
+                  "section_text.md"
+                ],
+                "out": [
+                  "<Фича>.md"
+                ],
+                "text": "`node <skill>/scripts/prd_tools.js assemble \"<PRD.md>\" \"<папка материалов>\"`"
+              }
+            ],
+            [
+              {
+                "actor": "reviewer",
+                "via": "Codex",
+                "label": "--write",
+                "in": [
+                  "<Фича>.md",
+                  "copy_deck.md",
+                  "wireframes.md",
+                  "solution_options.md"
+                ],
+                "out": [
+                  "review_comments.md"
+                ],
+                "text": "ревью по `review.md`: Codex {{reviewer.model:code}} · {{reviewer.effort:code}}"
+              }
+            ]
+          ],
+          "note": "Исследования и метрики ревьюеру не передаются — ради экономии окна Codex.",
+          "handoff": "review_comments.md",
+          "id": "full-6",
+          "gen": true
+        },
+        {
+          "tag": "6",
+          "title": "Правки по ревью",
+          "groups": [
+            [
+              {
+                "actor": "prd-core-pm",
+                "via": "SendMessage",
+                "label": "проход 3",
+                "in": [
+                  "review_comments.md"
+                ],
+                "out": [
+                  "<Фича>.md",
+                  "solution_options.md",
+                  "список «кому — что исправить»"
+                ]
+              }
+            ],
+            [
+              {
+                "actor": "prd-ux-writer",
+                "via": "SendMessage",
+                "label": "правки",
+                "out": [
+                  "copy_deck.md",
+                  "section_text.md"
+                ]
+              },
+              {
+                "actor": "prd-product-designer",
+                "via": "SendMessage",
+                "label": "правки",
+                "out": [
+                  "wireframes.md",
+                  "section_4.md",
+                  "design.html",
+                  "before-after.html"
+                ]
+              },
+              {
+                "actor": "prd-product-analyst",
+                "via": "SendMessage",
+                "label": "правки",
+                "out": [
+                  "section_5.md"
+                ]
+              }
+            ],
+            [
+              {
+                "actor": "script",
+                "via": "bash",
+                "label": "assemble",
+                "out": [
+                  "<Фича>.md"
+                ]
+              }
+            ]
+          ],
+          "note": "Одна итерация. Чужие файлы Core PM не правит — отдаёт список авторам через оркестратора.",
+          "text": "`prd-core-pm` проход 3. Его список «кому - что исправить» - авторам через SendMessage, они правят свои файлы; затем снова `assemble`. Изменились разделы 3, 6, «Текст» или дизайн - дизайнер пересобирает `<Фича>.before-after.html`. Одна итерация.",
+          "id": "full-7",
+          "gen": true
+        },
+        {
+          "tag": "7",
+          "title": "Чистка",
+          "groups": [
+            [
+              {
+                "actor": "prd-cleanup",
+                "via": "Agent",
+                "in": [
+                  "<Фича>.md"
+                ],
+                "out": [
+                  "<Фича>.md"
+                ],
+                "text": "`prd-cleanup`"
+              }
+            ]
+          ],
+          "note": "Оркестратор дописывает лимиты после прогона в run_log.md.",
+          "text": "Лимиты после прогона - в `run_log.md`.",
+          "id": "full-8",
+          "gen": true
+        },
+        {
+          "tag": "итог",
+          "title": "Вопросы и сдача",
+          "kind": "final",
+          "groups": [
+            [
+              {
+                "actor": "user",
+                "via": "AskUserQuestion",
+                "label": "только новые вопросы агентов пачкой"
+              }
+            ],
+            [
+              {
+                "actor": "prd-core-pm",
+                "via": "SendMessage",
+                "label": "правки по ответам, затем затронутые авторы"
+              }
+            ],
+            [
+              {
+                "actor": "script",
+                "via": "bash",
+                "label": "assemble + check"
+              }
+            ],
+            [
+              {
+                "actor": "orchestrator",
+                "out": [
+                  "ссылки: дизайн сайта, требования",
+                  "строка в каталоге документов",
+                  "итог ревью и расход лимитов",
+                  "список «Допущения» в чат"
+                ]
+              }
+            ]
+          ],
+          "note": "Ответ совпал с тем, что уже в PRD, — правок нет.",
+          "id": "full-9",
+          "gen": false
+        }
+      ],
+      "gen": "waves",
+      "numberFrom": 0
+    },
+    "publish": {
+      "id": "publish",
+      "label": "«грузи»",
+      "short": "грузи",
+      "trigger": "«грузи» после готового PRD — команда и есть согласие",
+      "result": "страница вики + эпик в трекере, ссылки в шапке .md",
+      "steps": [
+        {
+          "tag": "1",
+          "title": "Публикация",
+          "groups": [
+            [
+              {
+                "actor": "script",
+                "via": "bash",
+                "label": "prd_tools.js notes: вопросы и допущения в файлах",
+                "out": [
+                  "найденное — автор убирает, оркестратор показывает в чате"
+                ]
+              }
+            ],
+            [
+              {
+                "actor": "prd-publisher",
+                "via": "Agent",
+                "in": [
+                  "<Фича>.md",
+                  "PNG раздела 4",
+                  "<Фича>.design.html"
+                ],
+                "out": [
+                  "эпик в трекере",
+                  "страница вики",
+                  "вложения",
+                  "Full: дочерние «Тексты» и «Раскладка»"
+                ]
+              }
+            ]
+          ],
+          "note": "Ошибка записи — агент останавливается и возвращает блокер, вслепую не повторяет.",
+          "handoff": "отчёт «опубликовано» — не доказательство",
+          "id": "publish-0",
+          "gen": false
+        },
+        {
+          "tag": "2",
+          "title": "Проверка",
+          "kind": "check",
+          "groups": [
+            [
+              {
+                "actor": "orchestrator",
+                "label": "проверяет сам",
+                "out": [
+                  "вложения на месте",
+                  "картинки шире 200 px",
+                  "первая строка: релиз и эпик",
+                  "дочерние страницы не пустые",
+                  "нет «Допущение», «Открытые вопросы», «TBD»",
+                  "у эпика Fix Version и «Бэклог QA анализа»"
+                ]
+              }
+            ]
+          ],
+          "note": "Не прошло — исправляет и проверяет снова. Это единственная чужая работа, которую делает оркестратор.",
+          "id": "publish-1",
+          "gen": false
+        },
+        {
+          "tag": "итог",
+          "title": "Запись ссылок",
+          "kind": "final",
+          "groups": [
+            [
+              {
+                "actor": "orchestrator",
+                "out": [
+                  "ссылка, ключ эпика, релиз — в шапку .md",
+                  "строка в run_log.md"
+                ]
+              }
+            ]
+          ],
+          "id": "publish-2",
+          "gen": false
+        }
+      ],
+      "gen": null,
+      "numberFrom": 1
+    },
+    "comments": {
+      "id": "comments",
+      "label": "«обнови с учётом комментов»",
+      "short": "комменты",
+      "trigger": "«обнови с учётом комментов» по опубликованному PRD",
+      "result": "исправленный .md; вики не трогается без прямой команды",
+      "steps": [
+        {
+          "tag": "1",
+          "title": "Сбор комментариев",
+          "groups": [
+            [
+              {
+                "actor": "prd-publisher",
+                "via": "Agent",
+                "in": [
+                  "страница вики"
+                ],
+                "out": [
+                  "wiki_comments.md"
+                ]
+              }
+            ]
+          ],
+          "note": "Нижние, inline и жёлтая подсветка; resolved пропускает. На комментарии не отвечает и не резолвит.",
+          "handoff": "wiki_comments.md",
+          "id": "comments-0",
+          "gen": false
+        },
+        {
+          "tag": "2",
+          "title": "Правки",
+          "groups": [
+            [
+              {
+                "actor": "prd-core-pm",
+                "via": "Agent",
+                "in": [
+                  "wiki_comments.md"
+                ],
+                "out": [
+                  "<Фича>.md"
+                ]
+              }
+            ]
+          ],
+          "note": "Правит только .md.",
+          "id": "comments-1",
+          "gen": false
+        },
+        {
+          "tag": "3",
+          "title": "Чистка",
+          "groups": [
+            [
+              {
+                "actor": "prd-cleanup",
+                "via": "Agent",
+                "in": [
+                  "<Фича>.md"
+                ],
+                "out": [
+                  "<Фича>.md"
+                ]
+              }
+            ]
+          ],
+          "id": "comments-2",
+          "gen": false
+        },
+        {
+          "tag": "итог",
+          "title": "Ответ",
+          "kind": "final",
+          "groups": [
+            [
+              {
+                "actor": "orchestrator",
+                "out": [
+                  "таблица: комментарий → ответ → что изменил",
+                  "открытые вопросы и допущения — в чат"
+                ]
+              }
+            ]
+          ],
+          "note": "Обновить страницу — только по команде «грузи» или «обнови в вики».",
+          "id": "comments-3",
+          "gen": false
+        }
+      ],
+      "gen": null,
+      "numberFrom": 1
+    }
+  }
+}

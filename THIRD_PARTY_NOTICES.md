@@ -11,3 +11,4 @@
 | Плагин Claude Code `caveman` | Julius Brussee, github.com/JuliusBrussee/caveman | Apache-2.0 | не копируется: каталог ставит его из репозитория автора |
 | Плагин bb `genui` | ComicBit, github.com/ComicBit/bb-plugin-genui | см. репозиторий автора | не копируется: каталог ставит его из репозитория автора |
 | telegram-mcp для плагина bb `tg-mentions` | chigwell, l1v0n1 — github.com/chigwell/telegram-mcp (проверен коммит 6072a24) | Apache-2.0 | не копируется: пользователь ставит его сам по README плагина |
+| openpyxl для плагина bb `feature-revenue` | openpyxl, foss.heptapod.net/openpyxl/openpyxl | MIT | не копируется: пользователь ставит `pip install openpyxl` |
